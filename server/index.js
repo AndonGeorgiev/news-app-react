@@ -7,10 +7,7 @@ const dbConfig = require('./config/mongoose');
 
 const app = express();
 expressConfig(app);
-app.get('/', (res, req) => {
-    req.json({ "test": "test" });
-    req.end();
-})
+
 dbConfig()
 .then(() =>{
     app.listen(4000, ()=>{
