@@ -18,7 +18,7 @@ function NewsCatalog (){
     },[])
     
     return(
-        news.map( news => <NewsItem  title={news.title} description={news.description} img={news.urlToImage}></NewsItem>)
+        news.map( news => <NewsItem url={news.url} title={news.title} description={news.description} img={news.urlToImage}></NewsItem>)
     )
 }
 

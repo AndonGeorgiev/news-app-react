@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;1,300&display=swap');
+.listItemStyle {
+    width: 80%;
+    height: 400px;
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.img {
+    width: 550px;
+    height: 300px;
+}
+
+.text {
+    font-family: 'Nunito', sans-serif;
+}
