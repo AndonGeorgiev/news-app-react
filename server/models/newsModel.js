@@ -7,9 +7,9 @@ const newsSchema = new mongoose.Schema({
         min: [6, 'The minimum length of the title is six!'],
     },
 
-    date:{
-        default: new Date(),
-    },
+    // date:{
+    //     default: new Date(),
+    // },
 
     text:{
         type: 'string',
