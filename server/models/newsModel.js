@@ -28,10 +28,21 @@ const newsSchema = new mongoose.Schema({
         required: true,
     },
 
-    likers:{
+    like:{
         type: Number,
         default: 0,
     },
+
+    dislike:{
+        type: Number,
+        default: 0,
+    },
+
+    tag:{ 
+        type: 'string',
+        required: true,
+        enum:['България', 'Светът', 'Спорт'],
+    }
 });
 
 const News = mongoose.model('News', newsSchema);
