@@ -1,6 +1,6 @@
 
 import './App.css';
-import NewsCatalog from './components/NewsCatalog/NewsCatalog';
+import Home from './components/home/Home';
 import Header from './components/Header/Header';
 
 function App() {
@@ -8,9 +8,11 @@ function App() {
     <NewsCatalog />
         <>
             <Header />
+            <Home />
         </>
     )
     
+
 }
 
         export default App;
