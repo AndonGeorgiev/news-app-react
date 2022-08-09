@@ -19,8 +19,8 @@ const newsSchema = new mongoose.Schema({
     },
 
     author:{
-        type: 'string',
-        required: true,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
     },
 
     picture:{
