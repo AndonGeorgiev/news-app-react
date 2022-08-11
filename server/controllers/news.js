@@ -3,7 +3,10 @@ const { getAll, create } = require('../services/newsService');
 const router = express.Router();
 
 const getNews = async function(req, res) {
-    const allNews = await getAll();
+    let tag = req.query.tag;
+    console.log(tag);
+    const allNews = await getAll(tag);
+    console.log(allNews);
     res.json(allNews);
     res.end();
 }
