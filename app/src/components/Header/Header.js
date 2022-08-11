@@ -1,4 +1,5 @@
 import styles from './Header.module.css'
+import { Link } from "react-router-dom";
 
 
 function Header() {
@@ -6,15 +7,15 @@ function Header() {
         <header>
             <nav className={styles.nav}>
 
-                <a className={styles.logo} >BigNews</a>
+                <Link className={styles.logo} to='/' >BigNews</Link>
 
                 <ul className={styles.ul}>
                     <div className={styles.div}>
-                        <li className={styles.li}><a className={styles.a} href="/catalog">България</a></li>
-                        <li className={styles.li}><a className={styles.a} href='/'>Светът</a></li>
-                        <li className={styles.li}><a className={styles.a} href="/profile">Спорт</a></li>
+                        <li className={styles.li}><Link  className={styles.a} to="/news/bulgaria">България</Link></li>
+                        <li className={styles.li}><Link  className={styles.a} to='/news/world'>Светът</Link></li>
+                        <li className={styles.li}><Link  className={styles.a} to="/news/sport">Спорт</Link></li>
                         <div className={styles.div}>
-                            <li className={styles.li}><a className={styles.a} href="/catalog/create">Добави Новина</a></li>
+                            <li className={styles.li}><Link className={styles.a} to="/news/create">Добави Новина</Link></li>
                         </div >
 
                     </div>
