@@ -1,33 +1,32 @@
-import styles from './NewsCatalog.module.css';
+import styles from './NewsCatalog.module.css'
 import React from 'react';
-import NewsItem from './../NewsItem/NewsItem'
-import Carousel from 'react-elastic-carousel';
-const url = "https://newsapi.org/v2/everything?q=tesla&from=2022-07-09&sortBy=publishedAt&apiKey=988cee739618468d87430caa71252075";
+import NewsItem from '../NewsItem/NewsItem'
 
 
-function NewsCatalog() {
+
+function NewsCatalog(props) {
+
+    let imgPath = "/images/" + props.tag + ".png"
 
     let [news, setNews] = React.useState([]);
-    const key = 0;
 
     React.useEffect(() => {
-        fetch(url)
+        fetch('http://localhost:4000/news?'+ new URLSearchParams({ 'tag': props.tag}))
             .then((data) => data.json())
             .then((news) => {
-                let data = Object.values(news.articles)
-                setNews(data)
+                setNews(news)
             });
 
     }, [])
-    const breakPoints = [{width:1200, itemsToShow: 3}]
-    
 
     return (
-        <ul className={styles.styleList}>
-            <Carousel breakPoints={breakPoints}>
-                {news.map(news => <NewsItem url={news.url} title={news.title} img={news.urlToImage}></NewsItem>)}
-            </Carousel>
-        </ul>
+        <div className={styles.div}>
+            <img className={styles.img} src={imgPath} alt="test" />
+
+            <ul className={styles.styleList}>
+                {news.map(news => <NewsItem key={news._id} id={news._id}  title={news.title} img={news.picture}></NewsItem>)}
+            </ul>
+        </div>
     )
 }
 
