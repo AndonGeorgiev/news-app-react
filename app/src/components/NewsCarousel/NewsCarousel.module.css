@@ -1,0 +1,23 @@
+.styleList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 20px;
+    margin-bottom: 60px;
+}
+
+.tag {
+    clip-path: polygon(75% 0%, 90% 50%, 75% 100%, 0% 100%, 0 44%, 0% 0%);
+    background: #fddb3a;
+    padding: 5px 125px 5px 75px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #363940;
+    text-align: start;
+}
+
+p {
+    margin: 0;
+    text-align: start;
+    width: 100%;
+}
