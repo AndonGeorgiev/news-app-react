@@ -1,10 +1,12 @@
 import styles from './NewsItem.module.css';
+import {Link} from 'react-router-dom'
 
 
 function NewsItem(props) {
     const isTop = props.top 
 
     return (
+        <Link to={'/news/' + props.id}>
         <li className={isTop? styles.topListItem : styles.listItemStyle}>
             <img className={ props.top ? styles.topImg : styles.img} src={props.img} alt="" />
             <div className={styles.content}>
@@ -12,6 +14,7 @@ function NewsItem(props) {
             </div>
 
         </li>
+        </Link>
     )
 }
 
