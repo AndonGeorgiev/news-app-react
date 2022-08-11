@@ -24,3 +24,14 @@ code {
 .kdCslO {
     display: none !important;
 }
+
+.eAyARa {
+    color: rgba(255, 255, 255, 0) !important;
+    background: #e8e8e800 !important;
+    box-shadow: none !important;
+}
+
+.eAyARa:hover {
+    color: rgba(255, 255, 255, 0) !important;
+    background: #e8e8e800 !important;
+}
