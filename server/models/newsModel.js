@@ -18,10 +18,10 @@ const newsSchema = new mongoose.Schema({
         max: [600, 'the maximum length of the description is 600!'],
     },
 
-    author:{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
-    },
+    // author:{
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: 'User'
+    // },
 
     picture:{
         type:'string',
@@ -41,7 +41,7 @@ const newsSchema = new mongoose.Schema({
     tag:{ 
         type: 'string',
         required: true,
-        enum:['България', 'Светът', 'Спорт'],
+        enum:['Bulgaria', 'World', 'Sport'],
     }
 });
 
