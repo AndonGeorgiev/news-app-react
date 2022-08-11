@@ -3,10 +3,10 @@ const expressConfig = require('./config/express');
 const dbConfig = require('./config/mongoose');
 
 
-
-
 const app = express();
 expressConfig(app);
+
+
 
 dbConfig()
 .then(() =>{
