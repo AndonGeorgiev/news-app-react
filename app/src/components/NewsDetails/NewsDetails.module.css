@@ -1,0 +1,35 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 70px 0 50px 0;
+}
+
+.img {
+    width: 50%;
+}
+
+.title {
+    font-size: 30px
+}
+
+.span {
+    font-size: 20px
+}
+
+.p {
+    width: 50%;
+    font-size: 20px;
+}
+
+i {
+    color: black;
+    font-size: 30px;
+    margin-top: 50px;
+}
+
+.statistic {
+    font-size: 30px;
+    margin: 0px 20px;
+}
