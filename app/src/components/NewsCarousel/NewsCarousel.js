@@ -2,24 +2,23 @@ import styles from './NewsCarousel.module.css';
 import React from 'react';
 import NewsItem from '../NewsItem/NewsItem'
 import Carousel from 'react-elastic-carousel';
+import { getNews } from './../../services/news'
 
 function NewsCarousel(props) {
 
     let [news, setNews] = React.useState([]);
 
-    React.useEffect(() => {
-        fetch('http://localhost:4000/news?'+ new URLSearchParams({ 'tag': props.tag}))
-            .then((data) =>{ 
-               return data.json();
-            })
-            .then((newsData) => {
+    async function setData() {
 
-                setNews(newsData)
-                console.log(newsData)
-            });
-;
+        let url = 'http://localhost:4000/news?' + new URLSearchParams({ 'query': props.tag });
+        let data = await getNews(url);
+
+        setNews(data);
+    }
+    React.useEffect(function () {
+        setData()
     }, [])
-    const breakPoints = [{ width: 1200, itemsToShow: 3 }, { width: 1500, itemsToShow: 4 }, { width: 1700, itemsToShow: 5 }]
+    const breakPoints = [{ width: 1200, itemsToShow: 3 }, { width: 1500, itemsToShow: 4 }, { width: 1700, itemsToShow: 4 }]
 
     return (
         <ul className={styles.styleList}>
@@ -27,7 +26,7 @@ function NewsCarousel(props) {
                 <p>{props.tag}</p>
             </div>
             <Carousel breakPoints={breakPoints}>
-                {news.map(news => <NewsItem  key={news._id} id={news._id} title={news.title} img={news.picture}></NewsItem>)}
+                {news.map(newsData => <NewsItem key={newsData._id} id={newsData._id} title={newsData.title} img={newsData.picture}></NewsItem>)}
             </Carousel>
         </ul>
     )
