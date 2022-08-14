@@ -1,0 +1,10 @@
+.backgroundElement {
+    padding-bottom: 300px;
+    padding-left: 50%;
+    padding-right: 50%;
+    max-width: 1600px;
+    position: absolute;
+    top: 55px;
+    background-color: #fddb3a;
+    position: 0;
+}
