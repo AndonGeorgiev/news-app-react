@@ -6,7 +6,7 @@ function NewsItem(props) {
     const isTop = props.top 
 
     return (
-        <Link to={'/news/' + props.id}>
+        <Link className={styles.link} to={'/news/' + props.id}>
         <li className={isTop? styles.topListItem : styles.listItemStyle}>
             <img className={ props.top ? styles.topImg : styles.img} src={props.img} alt="" />
             <div className={styles.content}>

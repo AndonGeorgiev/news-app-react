@@ -33,3 +33,22 @@ i {
     font-size: 30px;
     margin: 0px 20px;
 }
+
+.button {
+    text-decoration: none;
+    font-size: 20px;
+    background-color: yellow;
+    color: #fff;
+    padding: 3px 25px;
+    margin: 50px 20px 30px 20px;
+    border: unset;
+    cursor: pointer;
+}
+
+.delete {
+    background-color: red;
+}
+
+button {
+    background-color: red !important;
+}

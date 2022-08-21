@@ -7,7 +7,6 @@ const app = express();
 expressConfig(app);
 
 
-
 dbConfig()
 .then(() =>{
     app.listen(4000, ()=>{

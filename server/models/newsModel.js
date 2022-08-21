@@ -5,11 +5,13 @@ const newsSchema = new mongoose.Schema({
         type: 'string',
         required: [true,'The title is required!'],
         min: [6, 'The minimum length of the title is six!'],
+        timestamps: true,
     },
 
-    // date:{
-    //     default: new Date(),
-    // },
+    date:{
+        type: Date,  
+        default:  Date.now(),
+    },
 
     text:{
         type: 'string',
@@ -18,20 +20,17 @@ const newsSchema = new mongoose.Schema({
         max: [600, 'the maximum length of the description is 600!'],
     },
 
-    // author:{
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: 'User'
-    // },
+    creator: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    },
 
     picture:{
         type:'string',
         required: true,
     },
 
-    like:{
-        type: Number,
-        default: 0,
-    },
+    likers: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
 
     dislike:{
         type: Number,
@@ -43,7 +42,9 @@ const newsSchema = new mongoose.Schema({
         required: true,
         enum:['Bulgaria', 'World', 'Sport'],
     }
-});
+}, {
+    timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' },
+  });
 
 const News = mongoose.model('News', newsSchema);
 
