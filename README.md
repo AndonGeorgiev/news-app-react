@@ -14,6 +14,7 @@ This is my defense project for React Course at SoftUni. (July-August 2022)
  ### Logged readers can:
   * like news.
   * see the catalog page.
+  * see news details page.
  ### Logged journalists can:
   * create news.
   * edit the news written by them.
